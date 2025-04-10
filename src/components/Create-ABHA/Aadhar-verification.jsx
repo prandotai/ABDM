@@ -1,13 +1,24 @@
+import React from "react";
 import MixLogo from "../../assets/images/logo-mix.svg";
+import { useNavigate } from "react-router-dom";
 
 const AdharVerification = () => {
+
+    const navigate = useNavigate();
+
+    const back = () => {
+        navigate('/abha-home');
+    }
+
+
+
     return (
         <div className="pranHealtnMainUserFlow">
             <div className="abha-paranLogo">
                 <img src={MixLogo} />
             </div>
             <div className="userFlowAdharVer">
-                <div className="backArrow">
+                <div className="backArrow" onClick={back}>
                     <i class="material-icons">
                         keyboard_backspace
                     </i>

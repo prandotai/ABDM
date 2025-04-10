@@ -1,21 +1,32 @@
+import React from "react";
 import MixLogo from "../../assets/images/logo-mix.svg";
+import { useNavigate } from "react-router-dom";
+
 
 const DLVerification = () => {
+
+    const navigate = useNavigate();
+
+    const back = () => {
+        navigate('/abha-home');
+    }
+
+
     return (
         <div className="pranHealtnMainUserFlow">
             <div className="abha-paranLogo">
                 <img src={MixLogo} />
             </div>
             <div className="userFlowAdharVer">
-                <div className="backArrow">
+                <div className="backArrow" onClick={back}>
                     <i class="material-icons">
                         keyboard_backspace
                     </i>
                 </div>
                 <div className="flowTitle">
-                    <div className="adharVerified">Aadhar Verified <i class="material-icons">
+                    {/* <div className="adharVerified">Aadhar Verified <i class="material-icons">
                         check_circle
-                    </i></div>
+                    </i></div> */}
                     <h4>Driving Licence Verification</h4>
                     <p>OTP will be sent to the mobile number to the Driving Licence</p>
                 </div>

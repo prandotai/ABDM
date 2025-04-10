@@ -7,32 +7,37 @@ import persnal from "../../assets/images/comman/persnal-health-records.png";
 import constent from "../../assets/images/comman/constent-access.png";
 import digital from "../../assets/images/comman/digital-health-records.png";
 import { GlobalContext } from "../../GlobalDataContext/GlobalContext";
+import VerificationModel from "../../components/Create-ABHA/Verification-Type-model";
 
 
 const AbhaAbout = () => {
 
+    const [adharNo, setAdharNo] = useState("695968714526");
+    const [showModal, setShowModal] = useState(false);
 
 
     const navigate = useNavigate();
 
-    const handlCraeteABHAaddress = () => {
-        navigate('/aadhar-verification')
-    }
-
     const handlCancelABHAaddress = () => {
         navigate('/home')
     }
-
-
-
-
-    const [adharNo, setAdharNo] = useState("695968714526");
 
     const { setDataByKey } = useContext(GlobalContext)
     useEffect(() => {
         setDataByKey('AdharCardNumber', adharNo)
     }, []);
 
+    const handleCreateABHA = () => {
+        setShowModal(true);
+    };
+
+    const handleContinue = (selectedType) => {
+        if (selectedType === 'aadhaar') {
+            navigate('/aadhar-verification');
+        } else if (selectedType === 'dl') {
+            navigate('/dl-verification');
+        }
+    };
 
 
     return (
@@ -80,13 +85,17 @@ const AbhaAbout = () => {
                             </div>
                             <div className="createAbhaBtn">
                                 <button className="custBtn btnCancel" onClick={handlCancelABHAaddress}>Cancel</button>
-                                <button className="custBtn btnSuccess" onClick={handlCraeteABHAaddress}>Create  ABHA Address <i className="material-icons">arrow_right_alt</i></button>
+                                <button className="custBtn btnSuccess" onClick={handleCreateABHA}>Create  ABHA Address <i className="material-icons">arrow_right_alt</i></button>
                                 <button className="custBtn btnThems">Login to ABHA <i className="material-icons">arrow_right_alt</i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {showModal && (
+                <VerificationModel onClose={() => setShowModal(false)} onContinue={handleContinue} />)
+            }
 
         </>
     )

@@ -6,7 +6,7 @@ import MobileVerification from "../../components/Create-ABHA/Mobile-Verification
 import { GlobalContext } from "../../GlobalDataContext/GlobalContext";
 
 
-const AadharUserFlow = () => {
+const AadharVerificationPage = () => {
 
 
     const { getDataByKey } = useContext(GlobalContext)
@@ -19,12 +19,10 @@ const AadharUserFlow = () => {
                 <Header />
                 <div className="container">
                     <AdharVerification />
-                    {/* <MobileVerification /> */}
-                    {/* <DLVerification /> */}
                 </div>
             </div>
         </>
     )
 }
 
-export default AadharUserFlow;
+export default AadharVerificationPage;

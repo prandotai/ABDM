@@ -341,3 +341,54 @@
         }
     }
 }
+
+
+
+// .headerText {
+//     h5 {
+//         color: #1E429F;
+//         // font-size: 16px;
+//         font-weight: 500;
+//     }
+
+//     p {
+//         color: #6B7280;
+//         // font-size: 12px;
+//         font-weight: 400;
+//     }
+// }
+
+.veryFicationType {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+
+
+    .veryFicationTypeBox {
+        width: 180px;
+        height: 120px;
+        background: #F3F4F6;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+
+        &.selected {
+            background-color: #A4CAFE;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            color: #1E429F;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
