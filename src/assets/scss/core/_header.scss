@@ -1,0 +1,42 @@
+.headerMain {
+    padding: 10px 0px;
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+
+    .header {
+        display: flex;
+        align-items: center;
+
+        .logo-section {
+            img {
+                height: 30px;
+            }
+        }
+
+        .menuSection {
+            margin-left: auto;
+
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style: none;
+                    display: inline-block;
+
+                    a {
+                        display: inline-block;
+                        font-size: 12px;
+                        font-weight: 400;
+                        padding: 10px 10px;
+                        text-decoration: none;
+                        color: #0B2F9F;
+                    }
+
+                }
+            }
+        }
+    }
+}
