@@ -17,7 +17,7 @@ const WebRoutes = () => {
         <>
             <Suspense>
                 <Routes>
-                    <Route path="/home" element={<Home />}></Route>
+                    <Route path="/" element={<Home />}></Route>
                     <Route path="/abha-home" element={<AbhaAbout />}></Route>
                     <Route path="/aadhar-verification" element={<AadharVerificationPage />}></Route>
                     <Route path="/dl-verification" element={<DLverificationPage />}></Route>
