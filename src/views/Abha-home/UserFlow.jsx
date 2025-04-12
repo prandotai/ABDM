@@ -7,7 +7,7 @@ import persnal from "../../assets/images/comman/persnal-health-records.png";
 import constent from "../../assets/images/comman/constent-access.png";
 import digital from "../../assets/images/comman/digital-health-records.png";
 import { GlobalContext } from "../../GlobalDataContext/GlobalContext";
-import VerificationModel from "../../components/Create-ABHA/Verification-Type-model";
+import VerificationModel from "../../components/Abha-home/Verification-Type-model";
 
 
 const AbhaAbout = () => {
@@ -30,6 +30,10 @@ const AbhaAbout = () => {
     const handleCreateABHA = () => {
         setShowModal(true);
     };
+
+    const loginToAbha = () => {
+        navigate('/login-ABHA');
+    }
 
     const handleContinue = (selectedType) => {
         if (selectedType === 'aadhaar') {
@@ -86,7 +90,7 @@ const AbhaAbout = () => {
                             <div className="createAbhaBtn">
                                 <button className="custBtn btnCancel" onClick={handlCancelABHAaddress}>Cancel</button>
                                 <button className="custBtn btnSuccess" onClick={handleCreateABHA}>Create  ABHA Address <i className="material-icons">arrow_right_alt</i></button>
-                                <button className="custBtn btnThems">Login to ABHA <i className="material-icons">arrow_right_alt</i></button>
+                                <button className="custBtn btnThems" onClick={loginToAbha}>Login to ABHA <i className="material-icons">arrow_right_alt</i></button>
                             </div>
                         </div>
                     </div>

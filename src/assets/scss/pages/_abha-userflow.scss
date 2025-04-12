@@ -7,12 +7,67 @@
 
     .userFlowAdharVer {
         background-color: #fff;
-        padding: 24px;
+        // padding: 24px;
         border-radius: 16px;
-        width: 800px;
+        width: 900px;
         box-shadow: 0px 4px 6px 0px #0000000D;
         margin: 0px auto 20px;
         position: relative;
+
+        &.pre-create-ABHA {
+            padding: 24px;
+        }
+
+        &.anotherPaddingPage {
+            padding-top: 24px;
+
+            .selectLoginType {
+                margin: 20px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                .selectTypeLogin {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: #E5E7EB;
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                    cursor: pointer;
+
+                    &.selected {
+                        background: #1E429F;
+
+                        .loginTypeSelectOne {
+                            p {
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                    }
+
+                    .loginTypeSelectOne {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        p {
+                            color: #111928;
+                            font-size: 12px;
+                            font-weight: 500;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
 
         .backArrow {
             position: absolute;
@@ -66,15 +121,29 @@
         .user-profile-dashboard {
             display: flex;
             gap: 0px 20px;
-            margin-top: 20px;
+            margin-top: 0px;
+            padding: 24px 24px 0px 24px;
+
+            .contentCopy {
+                display: inline-block;
+                cursor: pointer;
+                position: relative;
+                left: 4px;
+                top: 2px;
+
+                i {
+                    font-size: 14px;
+                    color: #8d929e;
+                }
+            }
 
             .leftDashbirdMenu {
                 background-color: #F9FAFB;
                 border: 1px solid #E5E7EB;
                 padding: 16px;
                 border-radius: 16px;
-                width: 166px;
-                max-height: 200px;
+                width: 175px;
+                max-height: max-content;
 
                 ul {
                     padding: 0;
@@ -103,13 +172,122 @@
                 }
             }
 
-            .rightDashBord {
-                width: 393px;
+            .centerBoard {
+                width: 450px;
+
+                &.kyc-section-page {
+                    width: calc(100% - 250px);
+                }
+
+                &.manageAbhaProfile {
+                    width: calc(100% - 250px);
+                    min-height: 450px;
+                }
+
+                &.disableDeactivateAccountProfile {
+                    width: calc(100% - 250px);
+                    min-height: 450px;
+                }
 
                 .rightProfileMain {
-                    border: 1px solid #E5E7EB;
-                    padding: 24px;
+                    border: 0px solid #E5E7EB;
+                    padding: 0px;
                     border-radius: 16px;
+                    margin-bottom: 50px;
+
+                    &.re-kyc {
+                        .re-kyc-heading {
+                            margin-bottom: 10px;
+
+                            h4 {
+                                color: #1F2A37;
+                                font-size: 14px;
+                                font-weight: 500;
+                            }
+                        }
+
+                        .feilds {
+                            width: 340px;
+                        }
+
+                        .colordTextContent {
+                            margin-bottom: 20px;
+
+                            p {
+                                color: #3F83F8;
+                                font-size: 12px;
+                                font-weight: 500;
+                                margin: 0;
+
+                                u {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .terms-condition-section {
+                            width: 100%;
+                        }
+
+                        .nowCompleateReKYC {
+                            border: 1px solid #E5E7EB;
+                            padding: 24px;
+                            border-radius: 16px;
+
+                            .compleateKYC-icon {
+                                .bgImg {
+                                    background-image: url('../../images/comman/split-images.png');
+                                    width: 56px;
+                                    height: 56px;
+                                    display: block;
+                                    margin: auto;
+                                    text-align: center;
+                                    margin-bottom: 20px;
+                                }
+
+                                h4 {
+                                    color: #0E9F6E;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    margin-bottom: 20px;
+                                    text-align: center;
+                                }
+                            }
+
+                            .Now-you-can {
+                                margin-bottom: 20px;
+
+                                h4 {
+                                    color: #1E429F;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    margin: 0;
+                                    text-align: center;
+                                }
+                            }
+
+                            .thirdreKycColum {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                .kyc-boxes {
+                                    background-color: #F3F4F6;
+                                    padding: 16px;
+                                    border-radius: 16px;
+                                    width: 32%;
+
+                                    p {
+                                        color: #1F2A37;
+                                        margin: 0;
+                                        font-size: 12px;
+                                        text-align: center;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                        }
+                    }
 
 
                     .profileBanner {
@@ -126,7 +304,7 @@
                         padding: 16px;
                         display: flex;
                         gap: 0px 20px;
-                        margin-bottom: 30px;
+                        margin-bottom: 10px;
 
                         h4 {
                             color: #1F2A37;
@@ -147,7 +325,7 @@
                         background: #F3F4F6;
                         border-radius: 16px;
                         padding: 16px;
-                        margin-bottom: 30px;
+                        margin-bottom: 10px;
 
                         h4 {
                             color: #1F2A37;
@@ -162,41 +340,290 @@
                             margin: 0;
                             font-weight: 400;
                         }
+
+                        &.dateOfBirthday {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+
+
                     }
 
                     .phrAddress {
-                        margin-bottom: 30px;
+                        margin-bottom: 10px;
                     }
 
-                    .scanner {
-                        // display: none;
+                    .validate {
+                        margin-top: 20px;
 
-                        .scannerImg {
-                            text-align: center;
+                        &>p {
+                            color: #1E429F;
+                            font-size: 12px;
+                            font-weight: 500;
+                            margin: 0;
+
                         }
 
-                        .scannerShare {
-                            margin-top: 5px;
+                        .validateSelect {
+                            display: flex;
+                            background: #F3F4F6;
+                            border-radius: 8px;
+                            padding: 8px;
+                            gap: 15px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            position: relative;
+                            cursor: pointer;
+
+                            h4 {
+                                color: #111928;
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin-bottom: 2px;
+                            }
 
                             p {
+                                color: #6B7280;
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+
+
+                    .deactivate-delete-section {
+                        .desabled-account-content {
+                            margin-bottom: 10px;
+
+                            h4 {
+                                color: #1E429F;
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin: 0;
+                            }
+
+                            p {
+                                color: #6B7280;
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+                        }
+
+                        .account-selectOne {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+
+                            .DeactivateTemporarily {
                                 display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                color: #3F83F8;
+                                background: #F3F4F6;
+                                border-radius: 8px;
+                                padding: 8px 15px;
+                                gap: 8px;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                                position: relative;
                                 cursor: pointer;
+
+                                .selctDisabledAccount {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 2px;
+
+                                    .icon {
+                                        display: inline-block;
+                                        position: relative;
+                                        top: 2px;
+
+                                        i {
+                                            color: #1E429F;
+                                        }
+                                    }
+
+                                    p {
+                                        color: #1E429F;
+                                        margin: 0;
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .DeletePermanently {
+                                display: flex;
+                                background: #F3F4F6;
+                                border-radius: 8px;
+                                padding: 8px 15px;
+                                gap: 8px;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                                position: relative;
+                                cursor: pointer;
+
+                                .selctDisabledAccount {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 2px;
+
+                                    .icon {
+                                        display: inline-block;
+                                        position: relative;
+                                        top: 2px;
+
+                                        i {
+                                            color: #9B1C1C;
+                                        }
+                                    }
+
+                                    p {
+                                        color: #9B1C1C;
+                                        margin: 0;
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .DeactivateTemporarilyBoxRow {
+                            display: flex;
+                            gap: 20px;
+                            margin-top: 30px;
+
+                            .deaDisColBox {
+                                background-color: #F3F4F6;
+                                width: 30%;
+                                padding: 16px;
+                                border-radius: 16px;
+                                text-align: center;
+
+                                img {
+                                    margin-bottom: 20px;
+                                }
+
+                                p {
+                                    color: #000000;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                }
+
+                            }
+                        }
+                    }
+
+                    .manageProfileSection {
+                        display: flex;
+                        gap: 20px;
+                        flex-wrap: wrap;
+
+                        .manageProfileBox {
+                            background-color: #F3F4F6;
+                            border-radius: 16px;
+                            padding: 20px 24px;
+                            width: 46%;
+
+                            .manageProfilePhoto {}
+
+                            .manageProfileContent {
+                                margin: 10px 0px;
+
+                                .userName {
+                                    margin-bottom: 10px;
+
+                                    h4 {
+                                        color: #1F2A37;
+                                        font-size: 16px;
+                                        font-weight: 600;
+                                        margin: 0;
+                                    }
+
+                                    p {
+                                        color: #1F2A37;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                    }
+                                }
+
+                                .userAbhaNumber {
+                                    h4 {
+                                        color: #6B7280;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        margin: 0;
+                                    }
+
+                                    p {
+                                        color: #374151;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                    }
+                                }
                             }
                         }
                     }
                 }
+            }
 
-                .saveBtnProfile {
-                    padding-top: 20px;
-                    text-align: right;
-                    display: flex;
-                    justify-content: end;
-                    gap: 0px 20px;
+            .rightDashBord {
+                margin-left: auto;
+
+                .scanner {
+                    background: #f3f4f6;
+                    padding: 10px 10px;
+                    border-radius: 16px;
+
+                    .scannerImg {
+                        text-align: center;
+                    }
+
+                    .scannerShare {
+                        margin-top: 5px;
+                        border: 1px solid #cecece;
+                        border-radius: 4px;
+                        padding: 3px 0px;
+                        font-size: 14px;
+                        color: #333;
+
+                        p {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #1a2579;
+                            cursor: pointer;
+                            gap: 0px 6px;
+                        }
+                    }
+                }
+
+                .profileImg {
+                    width: 160px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
+        }
+
+        .bottomDashboard {
+            padding: 24px 24px 24px 24px;
+            background: #ebf5ff;
+            border-radius: 0px 0px 16px 16px;
+
+            .saveBtnProfile {
+                display: flex;
+                gap: 20px;
+
+                .btnThems {
+                    color: #1E429F;
+                    background-color: transparent;
+                }
+            }
+
+
         }
 
         .flow-feilds {
@@ -206,6 +633,10 @@
             width: 364px;
             align-items: center;
             margin: 30px auto 0px;
+
+            &.aadharCardLogin {
+                min-height: auto;
+            }
 
             .feilds {
                 width: 100%;
@@ -243,6 +674,64 @@
 
                 button {
                     width: 140px;
+                }
+            }
+        }
+
+        .terms-condition-section {
+            width: 65%;
+            margin: auto;
+            background: #f1f2f3;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10%;
+
+            .terms-condition-right {
+                h4 {
+                    color: #1F2A37;
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    color: #6B7280;
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                .readMore {
+                    color: #1E429F;
+                    display: inline-block;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .loginPageFooter {
+            border-top: 1px solid #E5E7EB;
+            margin-top: 20px;
+            padding: 20px 20px;
+
+            .forgotAbhaRetrive {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+
+                p {
+                    color: #6B7280;
+                    font-weight: 500;
+                    font-size: 12px;
+                    display: inline-block;
+                    cursor: pointer;
                 }
             }
         }
