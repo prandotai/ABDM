@@ -10,8 +10,8 @@ const AadharVerificationPage = () => {
 
 
     const { getDataByKey } = useContext(GlobalContext)
-    const checked = getDataByKey('AdharCardNumber')
-    console.log("checked", checked)
+    const checked = getDataByKey('AdharCardNumber');
+    console.log("checked", checked);
 
     return (
         <>
