@@ -783,6 +783,16 @@ thead th td {
         justify-content: center;
         gap: 0px 8px;
     }
+
+    &.disabled {
+        background-color: #9ca3af;
+        border: 1px solid #9ca3af;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px 8px;
+    }
 }
 
 
