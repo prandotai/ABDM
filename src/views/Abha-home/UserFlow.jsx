@@ -19,7 +19,7 @@ const AbhaAbout = () => {
     const navigate = useNavigate();
 
     const handlCancelABHAaddress = () => {
-        navigate('/home')
+        navigate('/')
     }
 
     const { setDataByKey } = useContext(GlobalContext)

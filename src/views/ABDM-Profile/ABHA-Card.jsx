@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../../components/common/Header";
 import MixLogo from '../../assets/images/logo-mix.svg'
 import User from '../../assets/images/comman/user.png'
@@ -8,8 +8,20 @@ import Scanner from '../../assets/images/comman/scanner.png'
 
 const UserABHAcard = () => {
 
-
-
+    const [abhaProfile, setAbhaProfile] = useState(null);
+    const [profilePhoto, setProfilePhoto] = useState("");
+    useEffect(() => {
+        const storedProfile = localStorage.getItem("orignalBeneficiaryData");
+        if (storedProfile) {
+            setAbhaProfile(JSON.parse(storedProfile));
+        }
+    }, []);    
+    useEffect(() => {
+        const base64Prefix = "data:image/png;base64,";
+        const base64String = abhaProfile ? base64Prefix + abhaProfile.photo: null;
+        setProfilePhoto(base64String);
+        console.log(abhaProfile);
+    },[abhaProfile]);
 
     return (
         <>
@@ -21,10 +33,6 @@ const UserABHAcard = () => {
                             <img src={MixLogo} />
                         </div>
                         <div className="userFlowAdharVer">
-                            {/* <div className="flowTitle">
-                                <h4>Set your PHR (ABDM) Address</h4>
-                                <p>Basic profile information is captured from Aadhar</p>
-                            </div> */}
                             <div className="user-profile-dashboard">
                                 <div className="leftDashbirdMenu">
                                     <ul>
@@ -44,42 +52,32 @@ const UserABHAcard = () => {
                                         </div>
                                         <div className="profileUser">
                                             <div className="profileImg">
-                                                <img src={User} />
+                                                <img src={profilePhoto} />
                                             </div>
                                             <div className="profileContent">
-                                                <h4>Rahul Sharma</h4>
-                                                <p>rahulsharma02@abdm <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
-                                                <p>9876543210 <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
+                                                <h4>{abhaProfile ? abhaProfile.firstName+''+abhaProfile.middleName+' '+abhaProfile.lastName : ''}</h4>
+                                                <p>{abhaProfile ? abhaProfile.phrAddress[0] : ''} <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
+                                                <p>{abhaProfile ? abhaProfile.mobile : ''} <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
                                             </div>
                                         </div>
                                         <div className="abhaNumber">
                                             <h4>ABHA Number</h4>
-                                            <p>91-5485-1148-2166 <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
+                                            <p>{abhaProfile ? abhaProfile.ABHANumber : ''} <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
                                         </div>
                                         <div className="abhaNumber abhaAddress">
                                             <h4>ABHA Address</h4>
-                                            <p>9876543210@abdm <span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
+                                            <p>{abhaProfile ? abhaProfile.phrAddress[0] : ''}<span className="contentCopy"><i className="material-icons">content_copy</i></span></p>
                                         </div>
                                         <div className="abhaNumber dateOfBirthday">
                                             <div>
                                                 <h4>Gender</h4>
-                                                <p>Male</p>
+                                                <p>{abhaProfile ? (abhaProfile.gender == 'M') ? 'Male'  : (abhaProfile.gender == 'F') ? 'Female' : '' : '' }</p>
                                             </div>
                                             <div>
                                                 <h4>Date Of Birth</h4>
-                                                <p>31/12/2000</p>
+                                                <p>{abhaProfile ? abhaProfile.dob : ''}</p>
                                             </div>
                                         </div>
-                                        {/* <div className="scanner">
-                                            <div className="scannerImg">
-                                                <img src={Scanner} />
-                                            </div>
-                                            <div className="scannerShare">
-                                                <p>Share <i class="material-icons">
-                                                    share
-                                                </i></p>
-                                            </div>
-                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="rightDashBord">
@@ -103,8 +101,6 @@ const UserABHAcard = () => {
                                     <button className="custBtn btnThems"><i className="material-icons">credit_card</i>Print PVC</button>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

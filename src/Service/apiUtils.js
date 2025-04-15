@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { ABMD_PUBLIC_KEY, CLIENT_Id, CLIENT_SECRET } from "../config";
+import { ABMD_PUBLIC_KEY, CLIENT_Id, CLIENT_SECRET, SESSION_API_URL } from "../config";
 
 export const encryptString = async (plainText) => {
 
@@ -40,28 +40,20 @@ export const encryptString = async (plainText) => {
 };
 
 export const createSession = async () => {
-    const Backend_token = localStorage.getItem('Backend_token');
     try {
         const response = await axios.post(
-            "/abdm/sessions",
+            SESSION_API_URL,
             {
-                request :{
-                    clientId: CLIENT_Id,
-                    clientSecret: CLIENT_SECRET,
-                    grantType: "client_credentials",
-                },
-                header: {
+                clientId: CLIENT_Id,
+                clientSecret: CLIENT_SECRET,
+                grantType: "client_credentials",
+            },
+            {
+                headers: {
                     "Content-Type": "application/json",
                     "REQUEST-ID": uuidv4(),
                     "TIMESTAMP": new Date().toISOString(),
                     "X-CM-ID": "sbx",
-                },
-                
-            },
-            {
-                headers: {
-                    'Content-Type'  : 'application/json',
-                    'Authorization' : `Bearer ${Backend_token}`,
                 },
             }
         );

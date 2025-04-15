@@ -1,14 +1,16 @@
 const getApiBaseUrl = () => {
     const { origin } = window.location;
     let apiBaseUrl = '';
-    if (origin.includes('dev')) {
-        apiBaseUrl = 'https://dev-v11.aielectron.ai';
+    if (origin.includes('localhost')) {
+        apiBaseUrl = 'https://abhasbx.abdm.gov.in/abha/api/v3';
+    }else if (origin.includes('dev')) {
+        apiBaseUrl = 'https://abhasbx.abdm.gov.in/abha/api/v3';
     } else if (origin.includes('qa')) {
-        apiBaseUrl = 'https://qa-v11.aielectron.ai';
+        apiBaseUrl = 'https://abhasbx.abdm.gov.in/abha/api/v3';
     } else if (origin.includes('uat')) {
-        apiBaseUrl = 'https://uat.aielectron.ai';
+        apiBaseUrl = 'https://abhasbx.abdm.gov.in/abha/api/v3';
     } else {
-        apiBaseUrl = 'https://dev-v11.aielectron.ai';
+        apiBaseUrl = 'https://live';
     }
     return apiBaseUrl;
 }
